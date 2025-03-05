@@ -10,59 +10,75 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
         }
         header {
-            background-color: #2c3e50;
+            background-color: #0d6efd;
             color: #fff;
             padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav {
-            background: #34495e;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            background: #004085;
             padding: 10px 0;
         }
         nav a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
             font-weight: 600;
             transition: color 0.3s;
         }
         nav a:hover {
             color: #1abc9c;
         }
-        .news-container, .ipo-container {
+        .container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
             padding: 20px;
             gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
-        .news-card, .ipo-card {
-            width: 400px;
+        .news-section {
+            flex: 2;
             background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
         }
-        .news-card:hover, .ipo-card:hover {
-            transform: scale(1.03);
+        .sidebar {
+            flex: 1;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #2c3e50;
+            color: #004085;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
         }
-        p {
-            color: #7f8c8d;
+        .news-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .news-card:hover {
+            transform: scale(1.03);
         }
         footer {
             text-align: center;
             padding: 10px;
-            background: #2c3e50;
+            background: #0d6efd;
             color: white;
             margin-top: 20px;
         }
@@ -70,46 +86,39 @@
 </head>
 <body>
 <header>
-    StockInsight - Latest Stock Market News
+    StockInsight - Stock Market News & IPO Tracker
 </header>
 <nav>
-    <a href="index.html">News</a>
+    <a href="index.html">Home</a>
     <a href="ipo.html">IPO Grey Market</a>
     <a href="admin.html">Admin Panel</a>
 </nav>
-<div class="news-container">
-    <div class="news-card">
-        <h2>Reliance AGM Today</h2>
-        <p>Reliance Industries will hold its Annual General Meeting today at 3 PM. Stay tuned for the latest updates.</p>
+<div class="container">
+    <div class="news-section">
+        <h2>Latest Stock Market News</h2>
+        <div class="news-card">
+            <h3>Reliance AGM Today</h3>
+            <p>Reliance Industries will hold its Annual General Meeting today at 3 PM. Stay tuned for the latest updates.</p>
+        </div>
+        <div class="news-card">
+            <h3>Tata Motors Q3 Results</h3>
+            <p>Tata Motors posted a 20% rise in net profits this quarter. Market experts predict a bullish trend.</p>
+        </div>
     </div>
-    <div class="news-card">
-        <h2>Tata Motors Q3 Results</h2>
-        <p>Tata Motors posted a 20% rise in net profits this quarter. Market experts predict a bullish trend.</p>
-    </div>
-    <div class="news-card">
-        <h2>New IPO Alert</h2>
-        <p>Zomato IPO opening from 15th March - Grey Market Premium ₹150. Subscribe or Avoid?</p>
-    </div>
-</div>
-<div class="ipo-container" id="ipo-page" style="display:none">
-    <div class="ipo-card">
-        <h2>LIC IPO</h2>
-        <p>Grey Market Premium: ₹50</p>
-    </div>
-    <div class="ipo-card">
-        <h2>Nykaa IPO</h2>
-        <p>Grey Market Premium: ₹120</p>
+    <div class="sidebar">
+        <h2>IPO Grey Market Rates</h2>
+        <div class="news-card">
+            <h3>LIC IPO</h3>
+            <p>Grey Market Premium: ₹50</p>
+        </div>
+        <div class="news-card">
+            <h3>Nykaa IPO</h3>
+            <p>Grey Market Premium: ₹120</p>
+        </div>
     </div>
 </div>
 <footer>
     &copy; 2025 StockInsight | All Rights Reserved
 </footer>
-<script>
-    const url = window.location.pathname;
-    if (url.includes("ipo.html")) {
-        document.querySelector(".news-container").style.display = "none";
-        document.getElementById("ipo-page").style.display = "flex";
-    }
-</script>
 </body>
 </html>
