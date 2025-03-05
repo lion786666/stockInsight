@@ -4,39 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StockInsight - Stock Market News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        h1 {
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .news-card {
+            width: 400px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .news-card:hover {
+            transform: scale(1.03);
+        }
+        h2 {
             color: #2c3e50;
         }
         p {
             color: #7f8c8d;
         }
-        .news-card {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
     </style>
 </head>
 <body>
-<h1>Welcome to StockInsight 🚀</h1>
-<p>Latest Stock Market News & IPO Updates</p>
-
-<div class="news-card">
-    <h2>Reliance AGM Today</h2>
-    <p>Reliance Industries will hold its Annual General Meeting today at 3 PM.</p>
+<header>
+    StockInsight - Latest Stock Market News
+</header>
+<div class="news-container">
+    <div class="news-card">
+        <h2>Reliance AGM Today</h2>
+        <p>Reliance Industries will hold its Annual General Meeting today at 3 PM. Stay tuned for the latest updates.</p>
+    </div>
+    <div class="news-card">
+        <h2>Tata Motors Q3 Results</h2>
+        <p>Tata Motors posted a 20% rise in net profits this quarter. Market experts predict a bullish trend.</p>
+    </div>
+    <div class="news-card">
+        <h2>New IPO Alert</h2>
+        <p>Zomato IPO opening from 15th March - Grey Market Premium ₹150. Subscribe or Avoid?</p>
+    </div>
 </div>
-
-<div class="news-card">
-    <h2>Tata Motors Q3 Results</h2>
-    <p>Tata Motors posted a 20% rise in net profits this quarter.</p>
-</div>
-
 </body>
 </html>
