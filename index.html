@@ -20,14 +20,29 @@
             font-size: 24px;
             font-weight: 600;
         }
-        .news-container {
+        nav {
+            background: #34495e;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #1abc9c;
+        }
+        .news-container, .ipo-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
             gap: 20px;
         }
-        .news-card {
+        .news-card, .ipo-card {
             width: 400px;
             background: #ffffff;
             padding: 20px;
@@ -35,7 +50,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-        .news-card:hover {
+        .news-card:hover, .ipo-card:hover {
             transform: scale(1.03);
         }
         h2 {
@@ -44,12 +59,24 @@
         p {
             color: #7f8c8d;
         }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 <header>
     StockInsight - Latest Stock Market News
 </header>
+<nav>
+    <a href="index.html">News</a>
+    <a href="ipo.html">IPO Grey Market</a>
+    <a href="admin.html">Admin Panel</a>
+</nav>
 <div class="news-container">
     <div class="news-card">
         <h2>Reliance AGM Today</h2>
@@ -64,5 +91,25 @@
         <p>Zomato IPO opening from 15th March - Grey Market Premium ₹150. Subscribe or Avoid?</p>
     </div>
 </div>
+<div class="ipo-container" id="ipo-page" style="display:none">
+    <div class="ipo-card">
+        <h2>LIC IPO</h2>
+        <p>Grey Market Premium: ₹50</p>
+    </div>
+    <div class="ipo-card">
+        <h2>Nykaa IPO</h2>
+        <p>Grey Market Premium: ₹120</p>
+    </div>
+</div>
+<footer>
+    &copy; 2025 StockInsight | All Rights Reserved
+</footer>
+<script>
+    const url = window.location.pathname;
+    if (url.includes("ipo.html")) {
+        document.querySelector(".news-container").style.display = "none";
+        document.getElementById("ipo-page").style.display = "flex";
+    }
+</script>
 </body>
 </html>
